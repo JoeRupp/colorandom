@@ -56,7 +56,7 @@ function generateHexCode() {
 };
 
 function createPalette() {
-  currentPalette = new Palette();
+  currentPalette = new Palette(color1, color2, color3, color4, color5);
 }
 
 // color1, color2, color3, color4, color5
@@ -64,23 +64,27 @@ function createPalette() {
 function savePalette() {
   savedPalettes.unshift(currentPalette);
   displaySavedPalettes();
-  currentPalette = new Palette();
+  createPalette()
+  // currentPalette = new Palette();
 };
 
 function displaySavedPalettes() {
   var userSavePalettes = [];
   for (var i = 0; i < savedPalettes.length; i++) {
     userSavePalettes += `<section class="saved-palette" id="${savedPalettes[i].id}">
-    <div class="saved-color"></div>
-    <div class="saved-color"></div>
-    <div class="saved-color"></div>
-    <div class="saved-color"></div>
-    <div class="saved-color"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].firstColor}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].secondColor}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].thirdColor}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].fourthColor}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].fifthColor}"></div>
     <img class="trash-icon" src="https://www.iconpacks.net/icons/1/free-trash-icon-347-thumb.png" alt="delete button">
     </section>`
   }
   savedPaletteSection.innerHTML = userSavePalettes;
 }
+
+// data-hexcode="${savedPalettes[i].color1.hexCode}"
+//userSavePalettes[i].color1.hexCode
 
 function deletePalette(event) {
    if (event.target.className === '.trash') {
