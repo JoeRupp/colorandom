@@ -103,8 +103,9 @@ img {
 
 aside {
   display: flex;
-  justify-content: center;
-  /* border: solid black; */
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 25vw;
   height: 100%;
 }
@@ -113,4 +114,24 @@ h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   padding-top: 35px;
+}
+
+.saved-palette {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  width: 250px;
+}
+
+.saved-color {
+  height: 35px;
+  width: 35px;
+  background-color: red;
+}
+
+.trash-icon {
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
 }
