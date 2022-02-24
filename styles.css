@@ -1,18 +1,24 @@
 /* font-family: 'Poppins', sans-serif; */
 /* UNIVERSAL----------------------------------------- */
 /* HEADER---------------------------------------------*/
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 15vh;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
+
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 50px;
 }
+
 button {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -21,70 +27,90 @@ button {
   background-color: white;
   width: 120px;
   height: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
-.buttons {
+
+button:hover {
+  background-color: #c5e0eb;
+}
+
+.buttons-box {
   display: flex;
   justify-content: space-between;
   width: 300px;
 }
 /* BODY-----------------------------------------------*/
-.body {
+
+main {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 143px;
+  height: 85vh;
 }
-.overlay {
-  position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
-  width: 100vw;
-  height: 50px;
-}
+
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
+
 .palette {
   display: flex;
   flex-direction: row;
 }
+
+.color-props {
+  height: 100%;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .color-one {
   background-color: rebeccapurple;
-  height: 100vh;
-  width: 15vw;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0)); */
 }
+
 .color-two {
   background-color: red;
-  height: 100vh;
-  width: 15vw;
 }
+
 .color-three {
   background-color: blue;
-  height: 100vh;
-  width: 15vw;
 }
+
 .color-four {
   background-color: yellow;
-  height: 100vh;
-  width: 15vw;
 }
+
 .color-five {
   background-color: pink;
-  height: 100vh;
-  width: 15vw;
 }
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  transform: rotate(-90deg);
+}
+
+img {
+  height: 25px;
+  width: auto;
+}
+
 /* ASIDE--------------------------------------------- */
+
 aside {
   display: flex;
   justify-content: center;
   /* border: solid black; */
   width: 25vw;
-  height: 100vh;
+  height: 100%;
 }
 
 h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  /* font-size: 16px;  */
+  padding-top: 35px;
 }
