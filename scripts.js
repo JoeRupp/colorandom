@@ -56,31 +56,36 @@ function generateHexCode() {
 };
 
 function createPalette() {
+  generateColors()
+  // var firstColor = color1
   currentPalette = new Palette(color1, color2, color3, color4, color5);
 }
 
+//This function would take a snapshot of the current palette being displayed, make a copy of it, and store it
+//This will push the currently displayed palette, with the colors 1-5, into the savedpalettes array as an object.
 // color1, color2, color3, color4, color5
 
 function savePalette() {
   savedPalettes.unshift(currentPalette);
+  // pushing an object into an array
   displaySavedPalettes();
   createPalette()
   // currentPalette = new Palette();
 };
 
 function displaySavedPalettes() {
-  var userSavePalettes = [];
+  var userSavedPalettes = [];
   for (var i = 0; i < savedPalettes.length; i++) {
-    userSavePalettes += `<section class="saved-palette" id="${savedPalettes[i].id}">
-    <div class="saved-color" data-hexcode="${savedPalettes[i].firstColor}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].secondColor}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].thirdColor}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].fourthColor}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].fifthColor}"></div>
+    userSavedPalettes += `<section class="saved-palette" id="${savedPalettes[i].id}">
+    <div class="saved-color" data-hexcode="${savedPalettes[i].firstColor.hexCode}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].secondColor.hexCode}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].thirdColor.hexCode}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].fourthColor.hexCode}"></div>
+    <div class="saved-color" data-hexcode="${savedPalettes[i].fifthColor.hexCode}"></div>
     <img class="trash-icon" src="https://www.iconpacks.net/icons/1/free-trash-icon-347-thumb.png" alt="delete button">
     </section>`
   }
-  savedPaletteSection.innerHTML = userSavePalettes;
+  savedPaletteSection.innerHTML = userSavedPalettes;
 }
 
 // data-hexcode="${savedPalettes[i].color1.hexCode}"
