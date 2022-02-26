@@ -92,10 +92,11 @@ p {
   font-size: 45px;
   font-weight: 800;
   transform: rotate(-90deg);
+  -webkit-text-stroke: 1.5px white;
 }
 
 img {
-  height: 25px;
+  height: 35px;
   width: auto;
 }
 
@@ -103,8 +104,9 @@ img {
 
 aside {
   display: flex;
-  justify-content: center;
-  /* border: solid black; */
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 25vw;
   height: 100%;
 }
@@ -114,3 +116,29 @@ h2 {
   font-weight: 500;
   padding-top: 35px;
 }
+
+.saved-palette {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  width: 250px;
+}
+
+.saved-color {
+  height: 35px;
+  width: 35px;
+  background-color: red;
+}
+
+.trash-icon {
+  background: url(./icons/trash.png);
+  background-size: contain;
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+}
+
+/* .saved-color[data-hexcode] {
+  background-color: attr(data-hexcode)
+} */
