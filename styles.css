@@ -92,10 +92,11 @@ p {
   font-size: 45px;
   font-weight: 800;
   transform: rotate(-90deg);
+  -webkit-text-stroke: 1.5px white;
 }
 
 img {
-  height: 25px;
+  height: 35px;
   width: auto;
 }
 
@@ -131,11 +132,13 @@ h2 {
 }
 
 .trash-icon {
+  background: url(./icons/trash.png);
+  background-size: contain;
   height: 35px;
   width: 35px;
   margin-left: 10px;
 }
 
-.saved-color[data-hexcode] {
+/* .saved-color[data-hexcode] {
   background-color: attr(data-hexcode)
-}
+} */

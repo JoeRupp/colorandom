@@ -31,7 +31,7 @@ var hexCodeFive = document.querySelector('.hex-code-5');
 var savedPaletteSection = document.querySelector('.saved-section');
 
 window.addEventListener('load', createPalette);
-window.addEventListener('load', generateColors);
+// window.addEventListener('load', generateColors);
 
 newPaletteButton.addEventListener('click', generateColors);
 savePaletteButton.addEventListener('click', savePalette);
@@ -73,23 +73,58 @@ function savePalette() {
   // currentPalette = new Palette();
 };
 
+// function displaySavedPalettes() {
+//   var userSavedPalettes = [];
+//   for (var i = 0; i < savedPalettes.length; i++) {
+//     userSavedPalettes += `<section class="saved-palette" id="${savedPalettes[i].id}">
+//     <div class="saved-color"></div>
+//     <div class="saved-color"></div>
+//     <div class="saved-color"></div>
+//     <div class="saved-color"></div>
+//     <div class="saved-color"></div>
+//     <img class="trash-icon" src="./icons/trash.png" alt="delete button">
+//     </section>`
+//   }
+//   for (var i = 0; i < savedPalettes.length; i++) {
+//     var paletteBlockOne = document.querySelector(.saved)
+//   }
+//   savedPaletteSection.innerHTML = userSavedPalettes;
+// }
+
 function displaySavedPalettes() {
-  var userSavedPalettes = [];
+  savedPaletteSection.innerHTML = "";
   for (var i = 0; i < savedPalettes.length; i++) {
-    userSavedPalettes += `<section class="saved-palette" id="${savedPalettes[i].id}">
-    <div class="saved-color" data-hexcode="${savedPalettes[i].firstColor.hexCode}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].secondColor.hexCode}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].thirdColor.hexCode}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].fourthColor.hexCode}"></div>
-    <div class="saved-color" data-hexcode="${savedPalettes[i].fifthColor.hexCode}"></div>
-    <img class="trash-icon" src="https://www.iconpacks.net/icons/1/free-trash-icon-347-thumb.png" alt="delete button">
-    </section>`
-  }
-  savedPaletteSection.innerHTML = userSavedPalettes;
+  var savedPalette = document.createElement("section");
+  savedPalette.classList.add("saved-palette");
+  savedPaletteSection.appendChild(savedPalette);
+    var colorBox1 = document.createElement("div");
+    colorBox1.classList.add("saved-color");
+    savedPalette.appendChild(colorBox1)
+    colorBox1.style.backgroundColor = `${savedPalettes[i].firstColor.hexCode}`
+    var colorBox2 = document.createElement("div");
+    colorBox2.classList.add("saved-color");
+    savedPalette.appendChild(colorBox2)
+    colorBox2.style.backgroundColor = `${savedPalettes[i].secondColor.hexCode}`
+    var colorBox3 = document.createElement("div");
+    colorBox3.classList.add("saved-color");
+    savedPalette.appendChild(colorBox3)
+    colorBox3.style.backgroundColor = `${savedPalettes[i].thirdColor.hexCode}`
+    var colorBox4 = document.createElement("div");
+    colorBox4.classList.add("saved-color");
+    savedPalette.appendChild(colorBox4)
+    colorBox4.style.backgroundColor = `${savedPalettes[i].fourthColor.hexCode}`
+    var colorBox5 = document.createElement("div");
+    colorBox5.classList.add("saved-color");
+    savedPalette.appendChild(colorBox5)
+    colorBox5.style.backgroundColor = `${savedPalettes[i].fifthColor.hexCode}`
+    var trash = document.createElement("div");
+    trash.classList.add("trash-icon");
+    savedPalette.appendChild(trash)
+    }
+
 }
 
-// data-hexcode="${savedPalettes[i].color1.hexCode}"
-//userSavePalettes[i].color1.hexCode
+// data-hexcode="${savedPalettes[i].firstColor.hexCode}"
 
 function deletePalette(event) {
    if (event.target.className === '.trash') {
