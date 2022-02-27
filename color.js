@@ -3,4 +3,4 @@ class Color {
     this.hexCode = abc123;
     this.locked = false;
   }
-}
+};
