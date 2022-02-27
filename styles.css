@@ -139,6 +139,6 @@ h2 {
   margin-left: 10px;
 }
 
-/* .saved-color[data-hexcode] {
-  background-color: attr(data-hexcode)
-} */
+.hidden {
+	display: none;
+}
