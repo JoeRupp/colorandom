@@ -5,6 +5,6 @@ class Palette {
     this.thirdColor = color3;
     this.fourthColor = color4;
     this.fifthColor = color5;
-    this.id = Date.now()
+    this.id = Date.now();
   }
-}
+};
