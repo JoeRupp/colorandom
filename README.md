@@ -4,9 +4,9 @@
 This is a random color generator that allows users to create custom palettes. Using HTML, CSS and JavaScript, we collaborated, employing 5 weeks of learning to accomplish all iterations without bugs and build a user-friendly, interactive experience.
 
 ### Collaborators
-[**Joe Rupp**](https://github.com/JoeRupp)
-[**Lourdes Benites**](https://github.com/lourdesbnts)
-[**Stephanie Roe**](https://github.com/stephanie-roe)
+- [**Joe Rupp**](https://github.com/JoeRupp)
+- [**Lourdes Benites**](https://github.com/lourdesbnts)
+- [**Stephanie Roe**](https://github.com/stephanie-roe)
 
 ### Installation Steps
 1. Fork this repo to create your own copy.
@@ -26,6 +26,7 @@ HTML | CSS | Javascript
 
 ![Gif of colorandom functionality](https://media.giphy.com/media/Yz7ck0Y8L8pxrCErCH/giphy.gif)
 ![Gif of colorandom functionality](https://media.giphy.com/media/AXkZUW0G3OViF9wRzh/giphy.gif)
+
 this is a quick demo of the above functionalities.
 
 ### Application Forecast
