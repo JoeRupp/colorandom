@@ -1,3 +1,5 @@
+//VARIABLES ---------------------------------------------
+
 var currentPalette;
 var color1 = new Color;
 var color2 = new Color;
@@ -21,11 +23,17 @@ var lockButtonFour = document.querySelector('.lock-color-4');
 var unlockButtonFive = document.querySelector('.unlock-color-5');
 var lockButtonFive = document.querySelector('.lock-color-5');
 
-var colorOneDiv = document.querySelector('.color-one');
-var colorTwoDiv = document.querySelector('.color-two');
-var colorThreeDiv = document.querySelector('.color-three');
-var colorFourDiv = document.querySelector('.color-four');
-var colorFiveDiv = document.querySelector('.color-five');
+var lockOne = document.querySelector('#lockOne');
+var lockTwo = document.querySelector('#lockTwo');
+var lockThree = document.querySelector('#lockThree');
+var lockFour = document.querySelector('#lockFour');
+var lockFive = document.querySelector('#lockFive');
+
+var colorOneDiv = document.querySelector('#colorOne');
+var colorTwoDiv = document.querySelector('#colorTwo');
+var colorThreeDiv = document.querySelector('#colorThree');
+var colorFourDiv = document.querySelector('#colorFour');
+var colorFiveDiv = document.querySelector('#colorFive');
 
 var hexCodeOne = document.querySelector('.hex-code-1');
 var hexCodeTwo = document.querySelector('.hex-code-2');
@@ -33,14 +41,34 @@ var hexCodeThree = document.querySelector('.hex-code-3');
 var hexCodeFour = document.querySelector('.hex-code-4');
 var hexCodeFive = document.querySelector('.hex-code-5');
 
-// var palette = document.querySelector('.palette');
-// var colorProps = document.querySelectorAll('.color-props');
 var savedPaletteSection = document.querySelector('.saved-section');
+
+//EVENT LISTENERS ---------------------------------------------
 
 window.addEventListener('load', makeNewPalette);
 
 newPaletteButton.addEventListener('click', makeNewPalette);
 savePaletteButton.addEventListener('click', savePalette);
+
+lockOne.addEventListener('click', function() {
+  lockColor(lockButtonOne, unlockButtonOne, color1);
+});
+
+lockTwo.addEventListener('click', function() {
+  lockColor(lockButtonTwo, unlockButtonTwo, color2);
+});
+
+lockThree.addEventListener('click', function() {
+  lockColor(lockButtonThree, unlockButtonThree, color3);
+});
+
+lockFour.addEventListener('click', function() {
+  lockColor(lockButtonFour, unlockButtonFour, color4);
+});
+
+lockFive.addEventListener('click', function() {
+  lockColor(lockButtonFive, unlockButtonFive, color5);
+});
 
 savedPaletteSection.addEventListener('click', function(event) {
    if (event.target.className === 'trash-icon') {
@@ -53,69 +81,7 @@ savedPaletteSection.addEventListener('click', function(event) {
   displaySavedPalettes();
  });
 
-colorOneDiv.addEventListener('click', function(event) {
-  if (event.target.className === 'lock-color-1' || 'unlock-color-1') {
-    lockButtonOne.classList.toggle('hidden');
-    unlockButtonOne.classList.toggle('hidden');
-  }
-
-  if (`${lockButtonOne.classList}` === 'lock-color-1') {
-    color1.locked = true;
-  } else {
-    color1.locked = false;
-  }
-});
-
-colorTwoDiv.addEventListener('click', function(event) {
-  if (event.target.className === 'lock-color-2' || 'unlock-color-2') {
-    lockButtonTwo.classList.toggle('hidden');
-    unlockButtonTwo.classList.toggle('hidden');
-  }
-
-  if (`${lockButtonTwo.classList}` === 'lock-color-2') {
-    color2.locked = true;
-  } else {
-    color2.locked = false;
-  }
-});
-
-colorThreeDiv.addEventListener('click', function(event) {
-  if (event.target.className === 'lock-color-3' || 'unlock-color-3') {
-    lockButtonThree.classList.toggle('hidden');
-    unlockButtonThree.classList.toggle('hidden');
-  }
-
-  if (`${lockButtonThree.classList}` === 'lock-color-3') {
-    color3.locked = true;
-  } else {
-    color3.locked = false;
-  }
-});
-
-colorFourDiv.addEventListener('click', function(event) {
-  if (event.target.className === 'lock-color-4' || 'unlock-color-4') {
-    lockButtonFour.classList.toggle('hidden');
-    unlockButtonFour.classList.toggle('hidden');
-  }
-  if (`${lockButtonFour.classList}` === 'lock-color-4') {
-    color4.locked = true;
-  } else {
-    color4.locked = false;
-  }
-});
-
-colorFiveDiv.addEventListener('click', function(event) {
-  if (event.target.className === 'lock-color-5' || 'unlock-color-5') {
-    lockButtonFive.classList.toggle('hidden');
-    unlockButtonFive.classList.toggle('hidden');
-  }
-
-  if (`${lockButtonFive.classList}` === 'lock-color-5') {
-    color5.locked = true;
-  } else {
-    color5.locked = false;
-  }
-});
+//FUNCTIONS ---------------------------------------------
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -140,6 +106,16 @@ function savePalette() {
 function makeNewPalette() {
   generateColors()
   currentPalette = new Palette(color1, color2, color3, color4, color5);
+};
+
+function lockColor(lockButton, unlockButton, color) {
+  lockButton.classList.toggle('hidden');
+  unlockButton.classList.toggle('hidden');
+  if (!lockButton.classList.contains('hidden')) {
+    color.locked = true;
+  } else {
+    color.locked = false;
+  }
 };
 
 function displaySavedPalettes() {
