@@ -24,8 +24,8 @@ HTML | CSS | Javascript
  - If a user wants to lock a color in place, simply click the lock icon. This will prevent the color from disappearing when new colors are generated.
 - Saved colors are displayed in the Saved Palettes section. A user can delete palettes by clicking the trash can icon.
 
-![Gif of colorandom functionality](http://www.giphy.com/gifs/Yz7ck0Y8L8pxrCErCH)
-![Gif of colorandom functionality](http://www.giphy.com/gifs/AXkZUW0G3OViF9wRzh)
+![Gif of colorandom functionality](https://media.giphy.com/media/Yz7ck0Y8L8pxrCErCH/giphy.gif)
+![Gif of colorandom functionality](https://media.giphy.com/media/AXkZUW0G3OViF9wRzh/giphy.gif)
 this is a quick demo of the above functionalities.
 
 ### Application Forecast
